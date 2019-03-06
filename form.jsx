@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import UserTable from "./table.jsx";
+import UserDetails from "./userDetails.jsx";
 import Count from "./count.jsx";
 import axios from 'axios';
 
@@ -104,7 +105,7 @@ class UserForm extends React.Component {
                     <button onClick={this.mount.bind(this)}> mount</button><br/>
                     <button onClick={this.unmount.bind(this)}> Unmount</button><br/>
                     <UserTable data={this.state} actions={this.handleAddressChange} />
-                    <UserTable data={this.state} actions={this.handleAddressChange} />
+                    <UserDetails data={this.state} />
                     
                 </form>
             </div>
@@ -121,7 +122,11 @@ class UserForm extends React.Component {
         //     })
 
         axios.get('http://localhost:3000/api')
-        .then(json => console.log(json))
+        .then(json => {
+            console.log(json)
+            this.setState({userData: json.data})
+            console.log('API respnoseeeeeeeeeeeeee', this.state.userData)
+        })
     }
 
     

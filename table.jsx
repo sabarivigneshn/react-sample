@@ -10,9 +10,11 @@ class UserTable extends React.Component {
         return (
             <table>
                 <thead>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
