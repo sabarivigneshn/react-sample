@@ -22,6 +22,7 @@ class App extends React.Component {
     })
     return (
       <div>helloworld {this.state.message}
+      <p>Code available in jenkins build</p>
             <button onClick={this.updateMessage}>update </button>
             <UserForm></UserForm>
       </div>
